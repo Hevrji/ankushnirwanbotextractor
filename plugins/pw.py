@@ -135,6 +135,7 @@ async def account_login(bot: Client, m: Message):
                     cc = f"{data['topic']}:{data['url']}"
                     with open(f"{batch}.txt", 'a') as f:
                         f.write(f"{class_title}:{class_url}\n")
+
             except Exception as e:
                 await m.reply_text(str(e))
 
@@ -145,4 +146,4 @@ async def account_login(bot: Client, m: Message):
                                                                                                 "m3u8").strip()
                     cc = f"{data['topic']}:{data['url']}"
                     with open(f"{batch}.txt", 'a') as f:
-                        f.write(f"{class_title}:{class
+                        f.write(f"{class_title}:{class_url}\
