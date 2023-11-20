@@ -117,33 +117,4 @@ async def account_login(bot: Client, m: Message):
                 f'https://api.penpencil.xyz/v2/batches/{raw_text3}/subject/{t}/contents', params=params2,
                 headers=headers).json()["data"]
 
-            params3 = {'page': '3', 'tag': '', 'contentType': 'exercises-notes-videos', 'ut': ''}
-            response5 = requests.get(
-                f'https://api.penpencil.xyz/v2/batches/{raw_text3}/subject/{t}/contents', params=params3,
-                headers=headers).json()["data"]
-
-            params4 = {'page': '4', 'tag': '', 'contentType': 'exercises-notes-videos', 'ut': ''}
-            response6 = requests.get(
-                f'https://api.penpencil.xyz/v2/batches/{raw_text3}/subject/{t}/contents', params=params4,
-                headers=headers).json()["data"]
-
-            try:
-                for data in response3:
-                    class_title = (data["topic"])
-                    class_url = data["url"].replace("d1d34p8vz63oiq", "d3nzo6itypaz07").replace("mpd",
-                                                                                                "m3u8").strip()
-                    cc = f"{data['topic']}:{data['url']}"
-                    with open(f"{batch}.txt", 'a') as f:
-                        f.write(f"{class_title}:{class_url}\n")
-
-            except Exception as e:
-                await m.reply_text(str(e))
-
-            try:
-                for data in response4:
-                    class_title = (data["topic"])
-                    class_url = data["url"].replace("d1d34p8vz63oiq", "d3nzo6itypaz07").replace("mpd",
-                                                                                                "m3u8").strip()
-                    cc = f"{data['topic']}:{data['url']}"
-                    with open(f"{batch}.txt", 'a') as f:
-                        f.write(f"{class_title}:{class_url}\
+            params3 = {'page': '3
