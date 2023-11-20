@@ -7,7 +7,7 @@ import os
 import sys
 
 
-@stark.on_message(filters.command("start") & ~filters.edit)
+@stark.on_message(filters.command("start") & filters.edited)
 async def Start_msg(bot: stark , m: Message):
     # Your existing code here
 
