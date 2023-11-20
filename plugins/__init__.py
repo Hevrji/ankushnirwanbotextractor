@@ -7,8 +7,10 @@ import os
 import sys
 
 
-@stark.on_message(filters.command(["start"]) & ~filters)
+@stark.on_message(filters.command("start") & ~filters.edited)
 async def Start_msg(bot: stark , m: Message):
+    # Your existing code here
+
     await bot.send_photo(
     m.chat.id,
     photo="https://graph.org/file/51006f3a1cb6eb81fe55f.jpg",
